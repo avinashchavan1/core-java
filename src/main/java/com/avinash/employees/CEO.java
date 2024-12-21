@@ -10,7 +10,7 @@ public class CEO extends Employee implements IEmployee {
 
     public CEO(String infoText) {
         super(infoText);
-        peopleMatcher = peoplePattern.matcher(infoText);
+        peopleMatcher = PEOPLE_PATTERN.matcher(infoText);
         if (peopleMatcher.find()) {
             Pattern ceoPattern = Pattern.compile(ceoRegex);
             Matcher ceoMatcher = ceoPattern.matcher(infoText);

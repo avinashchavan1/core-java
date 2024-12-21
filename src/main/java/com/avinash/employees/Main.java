@@ -1,11 +1,8 @@
 package com.avinash.employees;
 
-import java.text.Format;
 import java.text.NumberFormat;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Main {
 
@@ -27,21 +24,13 @@ public class Main {
                 Rubble, Betty, 4/4/1915, CEO, {avgStockPrice=1637}
                 """;
 
-        String regex = "(?<lastName>\\w+),\\s*(?<firstName>\\w+),\\s*(?<dob>\\d{1,2}/\\d{1,2}/\\d{4}),\\s*(?<role>\\w+),\\s*\\{(?<details>.*)}\\n";
-
-        Pattern pat = Pattern.compile(regex);
-        Matcher mat = pat.matcher(people);
+        Matcher mat = Employee.PEOPLE_PATTERN.matcher(people);
 
         int totalSalary = 0;
-        IEmployee employee = null;
+        Employee employee = null;
         while (mat.find()) {
-            employee = switch (mat.group("role")) {
-                case "SoftwareEngineer" -> new SoftwareEngineer(mat.group());
-                case "Manager" -> new Manager(mat.group());
-                case "Analyst" -> new Analyst(mat.group());
-                case "CEO" -> new CEO(mat.group());
-                default -> null;
-            };
+            employee = Employee.getEmployeeType(mat.group());
+
             System.out.println(employee);
             totalSalary += employee.getSalary();
             employee = null;

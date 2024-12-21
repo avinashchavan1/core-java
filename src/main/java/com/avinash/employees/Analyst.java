@@ -9,7 +9,7 @@ public class Analyst extends Employee implements IEmployee {
 
     public Analyst(String infoText) {
         super(infoText);
-        peopleMatcher = peoplePattern.matcher(infoText);
+        peopleMatcher = PEOPLE_PATTERN.matcher(infoText);
         if (peopleMatcher.find()) {
             Pattern analystPattern = Pattern.compile(analystRegex);
             Matcher analystMatcher = analystPattern.matcher(infoText);
