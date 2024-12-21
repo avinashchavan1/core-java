@@ -30,7 +30,7 @@ public abstract class Employee {
 
     public abstract int getSalary();
 
-    public static Employee getEmployeeType(String personText) {
+    public static IEmployee getEmployeeType(String personText) {
         Matcher peopleMatcher = Employee.PEOPLE_PATTERN.matcher(personText);
         if (peopleMatcher.find()) {
             return switch (peopleMatcher.group("role")) {
@@ -38,10 +38,10 @@ public abstract class Employee {
                 case "Manager" -> new Manager(personText);
                 case "Analyst" -> new Analyst(personText);
                 case "CEO" -> new CEO(personText);
-                default -> null;
+                default -> () -> 0;
             };
         } else {
-            return null;
+            return () -> 0;
         }
     }
 

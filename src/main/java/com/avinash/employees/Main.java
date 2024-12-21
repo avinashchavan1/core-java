@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         String people = """
-                Flinstone1, Fred1, 1/1/1900, SoftwareEngineer, {code=2000,yoe=10,iq=140}
+                Flinstone1, Fred1, 1/1/1900, SoftwaresEngineer, {code=2000,yoe=10,iq=140}
                 Flinstone2, Fred2, 1/1/1900, SoftwareEngineer, {code=3000,yoe=13,iq=143}
                 Flinstone3, Fred3, 1/1/1900, SoftwareEngineer, {code=4000,yoe=15,iq=154}
                 Flinstone4, Fred4, 1/1/1900, SoftwareEngineer, {code=500,yoe=5,iq=120}
@@ -27,7 +27,7 @@ public class Main {
         Matcher mat = Employee.PEOPLE_PATTERN.matcher(people);
 
         int totalSalary = 0;
-        Employee employee = null;
+        IEmployee employee = null;
         while (mat.find()) {
             employee = Employee.getEmployeeType(mat.group());
 
@@ -38,5 +38,11 @@ public class Main {
         NumberFormat numberFormat = NumberFormat.getCurrencyInstance(Locale.US);
 
         System.out.println(numberFormat.format(totalSalary));
+        PersonRecord personRecord = new PersonRecord("Avi", 23);
+        System.out.printf("PersonRecord %s - %d\n ", personRecord.name(), personRecord.age());
+
+
+        Flyer flyer = new CEO("");
+ 
     }
 }
