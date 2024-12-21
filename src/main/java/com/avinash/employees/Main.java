@@ -43,6 +43,7 @@ public class Main {
 
 
         Flyer flyer = new CEO("");
- 
+        SoftwareEngineer coder = new SoftwareEngineer("");
+        coder.cooking();
     }
 }

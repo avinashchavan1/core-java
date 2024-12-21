@@ -3,7 +3,7 @@ package com.avinash.employees;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class SoftwareEngineer extends Employee implements IEmployee {
+public class SoftwareEngineer extends Employee implements IEmployee, IChef {
     private final String softwareEngineerRegex = "code=(?<code>\\d+)\\s*,yoe=\\s*(?<yoe>\\d+),iq=\\s*(?<iq>\\d+).*$";
     private int code;
     private int yoe;
