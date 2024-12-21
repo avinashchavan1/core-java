@@ -53,4 +53,52 @@ public abstract class Employee {
     public String toString() {
         return String.format("%s %s %s %s - %s", firstName, lastName, dob.toString(), numberFormat.format(getSalary()), numberFormat.format(getBonus()));
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public LocalDate getDob() {
+        return dob;
+    }
+
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
+    }
+
+    public Matcher getPeopleMatcher() {
+        return peopleMatcher;
+    }
+
+    public void setPeopleMatcher(Matcher peopleMatcher) {
+        this.peopleMatcher = peopleMatcher;
+    }
+
+    public DateTimeFormatter getDateTimeFormatter() {
+        return dateTimeFormatter;
+    }
+
+    public void setDateTimeFormatter(DateTimeFormatter dateTimeFormatter) {
+        this.dateTimeFormatter = dateTimeFormatter;
+    }
+
+    public NumberFormat getNumberFormat() {
+        return numberFormat;
+    }
+
+    public void setNumberFormat(NumberFormat numberFormat) {
+        this.numberFormat = numberFormat;
+    }
 }

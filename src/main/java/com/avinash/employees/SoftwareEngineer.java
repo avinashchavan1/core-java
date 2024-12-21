@@ -30,5 +30,31 @@ public class SoftwareEngineer extends Employee implements IEmployee, IChef {
         return 1000 + iq * yoe * code;
     }
 
+    public String getSoftwareEngineerRegex() {
+        return softwareEngineerRegex;
+    }
 
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public int getYoe() {
+        return yoe;
+    }
+
+    public void setYoe(int yoe) {
+        this.yoe = yoe;
+    }
+
+    public int getIq() {
+        return iq;
+    }
+
+    public void setIq(int iq) {
+        this.iq = iq;
+    }
 }

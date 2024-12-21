@@ -9,6 +9,26 @@ public class Manager extends Employee implements IEmployee {
     private int orgSize;
     private int dr;
 
+    public int getOrgSize() {
+        return orgSize;
+    }
+
+    public void setOrgSize(int orgSize) {
+        this.orgSize = orgSize;
+    }
+
+    public int getDr() {
+        return dr;
+    }
+
+    public void setDr(int dr) {
+        this.dr = dr;
+    }
+
+    public String getManagerRegex() {
+        return managerRegex;
+    }
+
     public Manager(String infoText) {
         super(infoText);
         peopleMatcher = PEOPLE_PATTERN.matcher(infoText);

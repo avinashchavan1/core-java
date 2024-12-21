@@ -8,6 +8,26 @@ public class CEO extends Employee implements IEmployee, Flyer {
     private int avgStockPrice;
     private Flyer flyer = new Pilot(1000, false);
 
+    public Flyer getFlyer() {
+        return flyer;
+    }
+
+    public void setFlyer(Flyer flyer) {
+        this.flyer = flyer;
+    }
+
+    public int getAvgStockPrice() {
+        return avgStockPrice;
+    }
+
+    public void setAvgStockPrice(int avgStockPrice) {
+        this.avgStockPrice = avgStockPrice;
+    }
+
+    public String getCeoRegex() {
+        return ceoRegex;
+    }
+
     public int getHoursFlown() {
         return flyer.getHoursFlown();
     }

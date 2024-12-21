@@ -30,7 +30,16 @@ public class Main {
         IEmployee employee = null;
         while (mat.find()) {
             employee = Employee.getEmployeeType(mat.group());
-
+            if (employee instanceof SoftwareEngineer softwareEngineer) {
+                System.out.println(softwareEngineer.getCode());
+            }
+            if (employee instanceof CEO ceo) {
+                System.out.printf("CEO %d\n", ceo.getAvgStockPrice());
+            }
+            if (employee instanceof Manager manager) {
+                System.out.printf("Manager %d\n", manager.getOrgSize());
+            }
+            
             System.out.println(employee);
             totalSalary += employee.getSalary();
             employee = null;
